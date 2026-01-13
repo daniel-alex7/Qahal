@@ -1,0 +1,409 @@
+body{
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        padding-top: 60px; 
+}
+
+.navbar {
+  background: #000000;
+  background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(230, 73, 25, 1) 100%);
+  padding: 10px 40px; /* Espaçamento superior e inferior */
+  width: 100%;
+  position: fixed;     /* Torna a barra fixa */
+  top: 0;              /* Gruda no topo da página */
+  z-index: 1000; 
+  display: flex;
+  align-items: center;   /* Alinha logo e menu na mesma linha, verticalmente */
+  justify-content: space-between; /* Espaça a logo e os links */
+ 
+  
+}
+
+.logo{
+  width: 50px; /* Ajuste o tamanho da logo conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+  
+}
+
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: left; 
+  align-items: center; /* Alinha os itens verticalmente */
+  gap: 30px;           /* Espaçamento entre itens */
+  
+}
+
+.navbar ul li  {
+  margin: 0 30px;
+  position: relative; /* Necessário para o posicionamento do submenu */
+  display: inline-block; /* Permite que os itens sejam exibidos em linha */
+  font-size: 20px;
+ 
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: all 0.3s ease; /* Suaviza o efeito de hover */
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navbar ul li a:hover {
+  background-color: #312121;
+  border-radius: 5px;
+ 
+}
+
+
+/* Cards */
+
+.cards {
+  /* Mantendo simples como provavelmente era, ou apenas centralizado */
+  text-align: center;
+}
+
+.card1, .card2, .card3 {
+  
+  display: inline-block;
+  vertical-align: top;
+  align-items: center; 
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  background-color: #fff;
+  color: #000;
+  margin: 20px auto;
+  transition: transform 0.3s ease;
+  margin-left: 20px; /* Espaçamento entre os cards */
+  
+}
+
+.card1:hover , .card2:hover, .card3:hover {
+  transform: translateY(-5px);
+}
+
+.card1 img, .card2 img, .card3 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content{
+  padding: 15px;
+}
+
+.card-content h3{
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.card-content p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: auto; /* Empurra o botão para o final do card */
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+
+
+/* Conteúdo da página */
+
+.content {
+ padding: 10px;
+ text-align: center;
+}
+
+
+.container {
+  display: flex;
+}
+
+/* Estilos para as Novas Seções */
+
+.ministerios, .eventos, .discipulado {
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 1px solid #333; /* Divisória sutil */
+}
+
+.grid-ministerios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid responsivo automático */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto 0;
+}
+
+.ministerio {
+  background: #1a1a1a; /* Fundo cinza escuro */
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  transition: transform 0.3s, border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+  /* Sombra no texto para leitura em cima de fotos */
+  text-shadow: 0 2px 5px rgba(0,0,0,0.9);
+}
+
+.ministerio:hover {
+  border-color: #e64919; /* Borda laranja ao passar o mouse */
+  transform: translateY(-5px);
+}
+
+/* Camada escura sobre a foto para o texto aparecer */
+.ministerio::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Ajuste a opacidade (0.6) se quiser mais claro ou escuro */
+  z-index: 0;
+}
+
+.ministerio h3, .ministerio p {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- IMAGENS DE FUNDO DOS MINISTÉRIOS --- */
+/* Substitua as URLs abaixo pelas suas fotos reais */
+.min-kids { background: url('imagens/qahal1.jfif') center/cover no-repeat, #1a1a1a; }
+.min-jovens { background: url('imagens/qahal2.jfif') center/cover no-repeat, #1a1a1a; }
+.min-social { background: url('imagens/qahal1.jfif') center/cover no-repeat, #1a1a1a; }
+.min-intercessao { background: url('imagens/qahal2.jfif') center/cover no-repeat, #1a1a1a; }
+.min-teatro { background: url('imagens/qahal1.jfif') center/cover no-repeat, #1a1a1a; }
+
+
+/* --- SEÇÃO EXCLUSIVA DE LOUVOR --- */
+.louvor {
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  /* Usei uma das imagens que você já tem como exemplo para o fundo */
+  background: url('imagens/louvor.html') center/cover no-repeat fixed; 
+  border-bottom: 1px solid #333;
+}
+
+.louvor-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), #000); /* Degradê para o preto */
+  z-index: 1;
+}
+
+.louvor-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.louvor h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.eventos ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.eventos li {
+  background: #1a1a1a;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-left: 4px solid #e64919; /* Detalhe laranja à esquerda */
+  text-align: left;
+  border-radius: 0 5px 5px 0;
+}
+
+.discipulado p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1.1em;
+}
+
+.sobre {
+  background-color: #f9f9f9;
+  color: #000203;
+  margin-top: 5%;
+  text-align: center;
+  padding: 10px; 
+  width: 100%;
+  height: auto;
+}
+
+.contato{
+    color: #f9f9f9;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.cultos{
+   color: #f9f9f9;
+   text-align: center;
+   padding: 10px;
+   width: 100%;
+   height: auto;
+}
+
+/* --- PÁGINA DE CONTATO (Landing Page) --- */
+
+.contact-main {
+  min-height: 80vh;
+  background-color: #000;
+}
+
+.contact-hero {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px;
+  /* Fundo sutil ou imagem */
+  background: url('imagens/Captura\ de\ tela\ 2026-01-10\ 164150.jpg') center/cover no-repeat; 
+  border-bottom: 4px solid #e64919;
+  margin-bottom: 50px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Escurece a imagem de fundo */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 40px;
+  padding: 0 20px 80px;
+}
+
+.contact-form-wrapper, .contact-info {
+  flex: 1;
+  min-width: 300px;
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid #333;
+}
+
+.contact-form-wrapper h2, .contact-info h3 {
+  color: #e64919;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+/* Estilo dos Inputs (Floating Labels) */
+.input-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.input-group input, .input-group textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid #444;
+  outline: none;
+  background: transparent;
+  transition: border-color 0.3s;
+  resize: vertical;
+}
+
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 16px;
+  color: #888;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+/* Animação quando clica ou tem texto */
+.input-group input:focus, .input-group textarea:focus,
+.input-group input:valid, .input-group textarea:valid {
+  border-bottom-color: #e64919;
+}
+
+.input-group input:focus ~ label, .input-group textarea:focus ~ label,
+.input-group input:valid ~ label, .input-group textarea:valid ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #e64919;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #e64919, #ff7b00);
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 73, 25, 0.4);
+}
+
+.map-container {
+  margin-top: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
