@@ -1,98 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-        background-color: black;
-        color: white;
+        background-color: #0a0a0a; /* Fundo preto suave moderno */
+        color: #e0e0e0; /* Texto levemente off-white para leitura confortável */
         font-family: Arial, sans-serif;
-        padding-top: 60px; 
+        padding-top: 80px;
+        line-height: 1.6; /* Melhora o espaçamento do texto */
 }
 
 .navbar {
-  background: #000000;
-  background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(230, 73, 25, 1) 100%);
-  padding: 10px 40px; /* Espaçamento superior e inferior */
+  background: rgba(10, 10, 10, 0.85); /* Fundo semi-transparente */
+  backdrop-filter: blur(10px); /* Efeito de vidro (Glassmorphism) */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 5%; /* Espaçamento responsivo */
   width: 100%;
   position: fixed;     /* Torna a barra fixa */
   top: 0;              /* Gruda no topo da página */
+  left: 0;             /* Garante que a barra comece na esquerda */
   z-index: 1000; 
   display: flex;
   align-items: center;   /* Alinha logo e menu na mesma linha, verticalmente */
   justify-content: space-between; /* Espaça a logo e os links */
- 
   
-}
+} 
 
 .logo{
-  width: 50px; /* Ajuste o tamanho da logo conforme necessário */
+  width: 70px; /* Logo restaurada para tamanho mais visível */
   height: auto; /* Mantém a proporção da imagem */
-  
 }
 
+/* Hover dos links do menu recebe leve fundo azul em hover */
+.nav-list li a:hover { background: rgba(30,144,255,0.2); color: #1e90ff; border-radius: 6px; }
 
-.navbar ul {
+.nav-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: left; 
-  align-items: center; /* Alinha os itens verticalmente */
-  gap: 30px;           /* Espaçamento entre itens */
-  
+  justify-content: left;
+  align-items: center;
+  gap: 30px;
 }
 
-.navbar ul li  {
+.nav-list li {
   margin: 0 30px;
-  position: relative; /* Necessário para o posicionamento do submenu */
-  display: inline-block; /* Permite que os itens sejam exibidos em linha */
+  position: relative;
+  display: inline-block;
   font-size: 20px;
- 
 }
 
-.navbar ul li a {
+.nav-list li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   padding: 8px 12px;
-  transition: all 0.3s ease; /* Suaviza o efeito de hover */
+  transition: all 0.3s ease;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.navbar ul li a:hover {
-  background-color: #312121;
-  border-radius: 5px;
- 
+.nav-list li a:hover {
+  transform: translateY(-2px); /* Apenas move levemente, mantendo a cor definida acima */
+}
+
+.mobile-menu-icon {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+/* Versão móvel: menu escondido e ícone visível */
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    background: rgba(0,0,0,0.95);
+    padding: 20px;
+    gap: 10px;
+    border-radius: 8px;
+    width: calc(100% - 40px);
+    max-width: 320px;
+    z-index: 1001;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-list li {
+    margin: 8px 0;
+  }
 }
 
 
 /* Cards */
 
 .cards {
-  /* Mantendo simples como provavelmente era, ou apenas centralizado */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
   text-align: center;
+  padding: 20px;
 }
 
-.card1, .card2, .card3 {
-  
-  display: inline-block;
-  vertical-align: top;
-  align-items: center; 
-  width: 300px;
-  border-radius: 10px;
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  background-color: #fff;
-  color: #000;
-  margin: 20px auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  background-color: #1a1a1a; /* Card escuro para combinar com o tema */
+  border: 1px solid #333;
+  color: #fff;
   transition: transform 0.3s ease;
-  margin-left: 20px; /* Espaçamento entre os cards */
-  
 }
 
-.card1:hover , .card2:hover, .card3:hover {
-  transform: translateY(-5px);
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(30, 144, 255, 0.15); /* Glow azul suave */
+  border-color: #1e90ff;
 }
 
-.card1 img, .card2 img, .card3 img {
+.card img {
   width: 100%;
   height: auto;
   display: block;
@@ -114,18 +163,21 @@ body{
 
 .btn {
   text-decoration: none;
-  background-color: #333;
+  background-color: #1e90ff;
   color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 50px; /* Botão arredondado moderno */
+  font-size: 15px;
+  font-weight: bold;
   display: inline-block;
   margin-top: auto; /* Empurra o botão para o final do card */
-  transition: background 0.3s;
+  transition: all 0.3s;
 }
 
 .btn:hover {
-  background-color: #555;
+  background-color: #187bcd;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
 }
 
 
@@ -137,10 +189,6 @@ body{
  text-align: center;
 }
 
-
-.container {
-  display: flex;
-}
 
 /* Estilos para as Novas Seções */
 
@@ -171,9 +219,9 @@ body{
 }
 
 .ministerio:hover {
-  border-color: #e64919; /* Borda laranja ao passar o mouse */
+  border-color: #1e90ff; /* Borda azul ao passar o mouse */
   transform: translateY(-5px);
-}
+} 
 
 /* Camada escura sobre a foto para o texto aparecer */
 .ministerio::before {
@@ -241,10 +289,10 @@ body{
   background: #1a1a1a;
   margin-bottom: 15px;
   padding: 20px;
-  border-left: 4px solid #e64919; /* Detalhe laranja à esquerda */
+  border-left: 4px solid #1e90ff; /* Detalhe azul à esquerda */
   text-align: left;
   border-radius: 0 5px 5px 0;
-}
+} 
 
 .discipulado p {
   max-width: 700px;
@@ -291,8 +339,8 @@ body{
   padding: 80px 20px;
   /* Fundo sutil ou imagem */
   background: url('imagens/Captura\ de\ tela\ 2026-01-10\ 164150.jpg') center/cover no-repeat; 
-  border-bottom: 4px solid #e64919;
-  margin-bottom: 50px;
+  border-bottom: 4px solid #1e90ff;
+  margin-bottom: 50px; 
 }
 
 .hero-overlay {
@@ -335,10 +383,10 @@ body{
 }
 
 .contact-form-wrapper h2, .contact-info h3 {
-  color: #e64919;
+  color: #1e90ff;
   margin-bottom: 25px;
   font-size: 1.8rem;
-}
+} 
 
 /* Estilo dos Inputs (Floating Labels) */
 .input-group {
@@ -372,15 +420,15 @@ body{
 /* Animação quando clica ou tem texto */
 .input-group input:focus, .input-group textarea:focus,
 .input-group input:valid, .input-group textarea:valid {
-  border-bottom-color: #e64919;
+  border-bottom-color: #1e90ff;
 }
 
 .input-group input:focus ~ label, .input-group textarea:focus ~ label,
 .input-group input:valid ~ label, .input-group textarea:valid ~ label {
   top: -20px;
   font-size: 12px;
-  color: #e64919;
-}
+  color: #1e90ff;
+} 
 
 .btn-submit {
   width: 100%;
@@ -391,14 +439,14 @@ body{
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: linear-gradient(90deg, #e64919, #ff7b00);
+  background: linear-gradient(90deg, #1e90ff, #4da6ff);
   color: white;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(230, 73, 25, 0.4);
+  box-shadow: 0 5px 15px rgba(30, 144, 255, 0.35);
 }
 
 .map-container {
@@ -406,4 +454,50 @@ body{
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #333;
+}
+
+/* Responsividade de iframes (vídeo e mapa) */
+.video-wrapper, .map-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe, .map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Ajustes gerais de layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Tamanhos responsivos */
+.hero-content h1, .hero-content h1 {
+  font-size: clamp(1.6rem, 4vw, 3.5rem);
+}
+
+.louvor h2 { font-size: clamp(1.6rem, 6vw, 3rem); padding: 0 10px; }
+
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: clamp(1.4rem, 6vw, 2.2rem); }
+  .contact-form-wrapper, .contact-info { padding: 20px; }
+  .contact-container { gap: 20px; padding: 0 10px 40px; }
+  .louvor { padding: 60px 10px; }
+}
+
+@media (max-width: 480px) {
+  .nav-list { right: 10px; width: calc(100% - 20px); }
+  .logo { width: 40px; }
+  .navbar { padding: 8px 12px; }
+  .card { max-width: 100%; }
+  .hero-content h1 { font-size: 1.6rem; }
 }
