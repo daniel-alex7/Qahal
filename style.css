@@ -79,6 +79,23 @@ body{
   margin-right: 10px;
 }
 
+/* Ajustes intermediários para manter o menu alinhado em telas médias */
+@media (max-width: 1200px) {
+  .nav-list {
+    gap: 20px;
+  }
+  .nav-list li {
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-list li {
+    margin: 0 5px;
+    font-size: 15px;
+  }
+}
+
 /* Versão móvel: menu escondido e ícone visível */
 @media (max-width: 768px) {
   .mobile-menu-icon {
@@ -244,6 +261,7 @@ body{
 .min-social { background: url('imagens/qahal1.jfif') center/cover no-repeat, #1a1a1a; }
 .min-intercessao { background: url('imagens/qahal2.jfif') center/cover no-repeat, #1a1a1a; }
 .min-teatro { background: url('imagens/qahal1.jfif') center/cover no-repeat, #1a1a1a; }
+.min-danca { background: url('imagens/qahal2.jfif') center/cover no-repeat, #1a1a1a; }
 
 
 /* --- SEÇÃO EXCLUSIVA DE LOUVOR --- */
