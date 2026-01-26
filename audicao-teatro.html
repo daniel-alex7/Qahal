@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audição Teatro | Qahal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+  <style>
+    /* Tema Dark & Gold Específico para Teatro */
+    body {
+      background-color: #0f0c29;
+      color: #e0e0e0;
+    }
+    
+    .audicao-hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to bottom, #0f0c29, #24243e);
+      border-bottom: 1px solid #d4af37;
+    }
+    
+    .audicao-hero h1 {
+      font-size: 3rem;
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #1a1a1a;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+      border: 1px solid #333;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      background-color: #252525;
+      border: 1px solid #444;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus, 
+    .form-group select:focus, 
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+
+    .btn-audicao {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(45deg, #d4af37, #c5a028);
+      color: #000;
+      font-weight: 800;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: transform 0.2s;
+    }
+
+    .btn-audicao:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <nav class="navbar">
+      <a href="index.html" style="text-decoration: none; color: white; font-weight: bold;">← Voltar para Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="audicao-hero">
+      <h1>Ficha de Audição</h1>
+      <p>O palco é um lugar de serviço. Conte-nos sobre você.</p>
+    </section>
+
+    <div class="form-container">
+      <form>
+        <div class="form-group"><label>Nome Completo</label><input type="text" required></div>
+        <div class="form-group"><label>Idade</label><input type="number" required></div>
+        <div class="form-group"><label>WhatsApp</label><input type="tel" required></div>
+        <div class="form-group"><label>Área de Interesse</label><select><option>Atuação</option><option>Roteiro</option><option>Bastidores/Técnica</option><option>Figurino</option></select></div>
+        <div class="form-group"><label>Experiência Anterior (Opcional)</label><textarea rows="4" placeholder="Já participou de alguma peça? Conte brevemente."></textarea></div>
+        <button type="submit" class="btn-audicao">Enviar Inscrição</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

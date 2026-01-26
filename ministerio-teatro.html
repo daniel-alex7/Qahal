@@ -6,6 +6,110 @@
   <title>Teatro | Qahal</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+  <style>
+    /* Estilos Exclusivos para a Página de Teatro */
+    .teatro-hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      position: relative;
+    }
+    .teatro-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+    .lancamentos {
+      padding: 80px 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+    .lancamentos h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      border-bottom: 3px solid #d4af37;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .play-card {
+      background: white;
+      width: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      text-align: left;
+    }
+    .play-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    }
+    .play-image {
+      height: 220px;
+      background-color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+    .play-info { padding: 25px; }
+    .play-info h3 { color: #2c3e50; margin-top: 0; font-size: 1.5rem; }
+    .play-info p { color: #666; font-size: 0.95rem; line-height: 1.5; }
+    
+    .faca-parte {
+      padding: 100px 20px;
+      background: #111;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .roles-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+    .roles-list li {
+      background: rgba(212, 175, 55, 0.15);
+      padding: 12px 25px;
+      border-radius: 50px;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      font-weight: bold;
+    }
+    .btn-highlight {
+      background-color: #d4af37;
+      color: #111;
+      padding: 18px 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      transition: 0.3s;
+      letter-spacing: 1px;
+    }
+    .btn-highlight:hover {
+      background-color: white;
+      color: #111;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+  </style>
 </head>
 <body>
   <header class="container">
@@ -23,20 +127,53 @@
   </header>
 
   <main>
-    <section class="content">
-      <br><br>
-      <h1>Teatro</h1>
-      <p>Arte e expressão para a glória de Deus.</p>
-      <br>
-      <p><em>Página em construção. Em breve mais informações sobre o ministério de teatro.</em></p>
-      <br><br>
-      <a href="contato.html" class="btn">Quero participar</a>
+    <!-- Hero Section -->
+    <section class="teatro-hero">
+      <h1>Ministério de Teatro</h1>
+      <p>Arte, profecia e expressão para a glória de Deus.</p>
+    </section>
+
+    <!-- Lançamentos -->
+    <section class="lancamentos">
+      <h2>Próximas Produções</h2>
+      <div class="gallery">
+        <!-- Card 1 -->
+        <div class="play-card">
+          <div class="play-image" style="background: linear-gradient(45deg, #8e2de2, #4a00e0);">
+            <span></span>
+          </div>
+          <div class="play-info">
+            <h3>Pascoa</h3>
+            <p>Uma história emocionante sobre perdão e reencontro que vai tocar seu coração. Estreia em breve.</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="play-card">
+          <div class="play-image" style="background: linear-gradient(45deg, #d4af37, #2c3e50);">
+            <span></span>
+          </div>
+          <div class="play-info">
+            <h3>Culto de Jovens</h3>
+            <p>Uma jornada visual sobre a transformação da mente. Prepare-se para algo novo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faça Parte -->
+    <section class="faca-parte">
+      <h2>O Palco Espera por Você</h2>
+      <p style="max-width: 600px; margin: 0 auto;">Não é apenas sobre atuar. É sobre servir com seus talentos para impactar vidas. Se você ama arte, seu lugar é aqui.</p>
+      <ul class="roles-list">
+        <li>Atuação</li> <li>Roteiro</li> <li>Figurino</li> <li>Maquiagem</li> <li>Iluminação</li>
+      </ul>
+      <a href="audicao-teatro.html" class="btn-highlight">Quero fazer uma audição</a>
     </section>
   </main>
 
   <footer class="contato">
     <h2>Contato</h2>
-    <p>Para mais informações, entre em contato conosco pelo e-mail: qahadm@gmail.com</p>
+    <p>Para mais informações, entre em contato conosco pelo e-mail: qahaladm@gmail.com</p>
   </footer>
 
   <script src="script.js"></script>
