@@ -6,6 +6,85 @@
   <title>Dança | Qahal</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+  <style>
+    /* Estilos personalizados para a página de Dança */
+    .dance-hero {
+      background: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%); /* Gradiente Roxo/Azul */
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    
+    .dance-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .dance-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .verse-box {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 20px;
+      border-left: 5px solid #8E2DE2;
+      background-color: #f8f9fa;
+      font-style: italic;
+      color: #555;
+      font-size: 1.2rem;
+    }
+
+    .ministry-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .activity-item {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .activity-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(142, 45, 226, 0.2);
+      border-color: #8E2DE2;
+    }
+
+    .activity-icon {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .cta-container {
+      text-align: center;
+      margin-top: 50px;
+      padding: 40px;
+      background-color: #f4f6f8;
+      border-radius: 20px;
+    }
+  </style>
 </head>
 <body>
   <header class="container">
@@ -25,12 +104,50 @@
   <main>
     <section class="content">
       <br><br>
-      <h1>Dança</h1>
-      <p>Adoração através do movimento.</p>
+    <!-- Hero Section Personalizado -->
+    <section class="dance-hero">
+      <h1>Ministério de Dança</h1>
+      <p><em>"Louvem-no com tamborins e danças." - Salmos 150:4</em></p>
       <br>
-      <p><em>Página em construção. Em breve mais informações sobre o ministério de dança.</em></p>
+      <div class="ministry-info">
+      <p>Adoração, Arte e Movimento</p>
+    </section>
+
+    <section class="dance-content">
+      <div class="verse-box">
+        "Louvem-no com tamborins e danças." <br><strong>- Salmos 150:4</strong>
+      </div>
+      
+      <div class="ministry-card">
+        <h2 style="color: #4A00E0; margin-bottom: 15px;">Nosso Propósito</h2>
+        <p>O Ministério de Dança da Qahal tem como propósito adorar a Deus através da expressão corporal, comunicando a mensagem do Evangelho com arte e unção.</p>
+        <p>Acreditamos que a dança é uma ferramenta poderosa para libertação, cura e celebração no corpo de Cristo. Não buscamos apenas a técnica, mas um coração adorador.</p>
+      </div>
+      <br>
+      <h3>Nossas Atividades</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>✨ Ministrações nos Cultos</li>
+        <li>✨ Ensaios Semanais</li>
+        <li>✨ Workshops e Treinamentos</li>
+        <li>✨ Evangelismo Criativo</li>
+      </ul>
       <br><br>
+      <p>Deseja servir ao Senhor com sua dança?</p>
       <a href="contato.html" class="btn">Quero participar</a>
+      
+      <h3 style="text-align: center; margin-bottom: 20px;">O que fazemos</h3>
+      <div class="activities-grid">
+        <div class="activity-item"><span class="activity-icon">🕊️</span><strong>Ministrações</strong><br>Nos cultos</div>
+        <div class="activity-item"><span class="activity-icon">🩰</span><strong>Ensaios</strong><br>Técnica e Espiritualidade</div>
+        <div class="activity-item"><span class="activity-icon">🎭</span><strong>Workshops</strong><br>Capacitação</div>
+        <div class="activity-item"><span class="activity-icon">🌍</span><strong>Evangelismo</strong><br>Ide através da arte</div>
+      </div>
+
+      <div class="cta-container">
+        <h3>Faça parte da equipe</h3>
+        <p style="margin-bottom: 20px;">Deseja servir ao Senhor com sua dança?</p>
+        <a href="contato.html" class="btn">Quero participar</a>
+      </div>
     </section>
   </main>
 
