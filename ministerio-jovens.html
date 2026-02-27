@@ -3,9 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jovens | Qahal</title>
+  <title>Sal da Terra | Jovens Qahal</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+  <style>
+    /* Estilo Único - Sal da Terra (Jovens) */
+    :root {
+      --salt-white: #f0f0f0;
+      --salt-accent: #00e5ff; /* Electric Cyan - Diferente do Roxo da Dança e Dourado do Teatro */
+      --salt-dark: #0b0b0b;
+      --salt-gray: #1a1a1a;
+    }
+
+    body {
+      background-color: var(--salt-dark);
+      color: var(--salt-white);
+      overflow-x: hidden; /* Evita scroll lateral pelos shapes */
+    }
+
+    /* Efeito de Granulação (Sal) no fundo */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* Hero Section */
+    .salt-hero {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      border-bottom: 1px solid #333;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+      overflow: hidden;
+    }
+
+    .salt-title {
+      font-size: 5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      line-height: 0.9;
+      position: relative;
+      z-index: 1;
+      color: transparent;
+      -webkit-text-stroke: 2px var(--salt-white);
+      transition: 0.5s;
+    }
+
+    .salt-title span {
+      display: block;
+      color: var(--salt-white);
+      -webkit-text-stroke: 0;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .salt-subtitle {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--salt-accent);
+      font-weight: bold;
+    }
+
+    /* Shapes decorativos */
+    .shape {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+    .shape-1 { width: 300px; height: 300px; top: 10%; left: -50px; border-color: rgba(0, 229, 255, 0.1); }
+    .shape-2 { width: 500px; height: 500px; bottom: -100px; right: -100px; border-color: rgba(255, 255, 255, 0.05); }
+
+    /* Conteúdo */
+    .salt-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .manifesto {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    .manifesto h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .manifesto p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .highlight {
+      color: var(--salt-accent);
+      font-weight: bold;
+    }
+
+    /* Grid de Atividades */
+    .grid-salt {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card-salt {
+      background: var(--salt-gray);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      border: 1px solid #333;
+    }
+
+    .card-salt:hover {
+      transform: translateY(-10px);
+      border-color: var(--salt-accent);
+    }
+
+    .card-salt h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .card-salt p {
+      color: #999;
+      line-height: 1.6;
+    }
+
+    .card-number {
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      font-size: 8rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.03);
+      z-index: 0;
+    }
+
+    /* CTA */
+    .join-us {
+      margin-top: 100px;
+      text-align: center;
+      padding: 60px;
+      background: linear-gradient(90deg, var(--salt-accent), #00b8cc);
+      color: #000;
+      border-radius: 2px;
+    }
+
+    .join-us h2 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .btn-salt {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 40px;
+      background: #000;
+      color: var(--salt-accent);
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: 2px solid #000;
+    }
+
+    .btn-salt:hover {
+      background: transparent;
+      color: #000;
+      border-color: #000;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .salt-title { font-size: 3rem; }
+      .salt-hero { height: 60vh; }
+    }
+  </style>
 </head>
 <body>
   <header class="container">
@@ -23,14 +215,52 @@
   </header>
 
   <main>
-    <section class="content">
-      <br><br>
-      <h1>Jovens</h1>
-      <p>Uma comunidade vibrante e apaixonada.</p>
-      <br>
-      <p><em>Página em construção. Em breve mais informações sobre o ministério de jovens.</em></p>
-      <br><br>
-      <a href="contato.html" class="btn">Quero participar</a>
+    <section class="salt-hero">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <h1 class="salt-title">
+        SAL DA<br>
+        <span>TERRA</span>
+      </h1>
+      <p class="salt-subtitle">Sabor • Preservação • Impacto</p>
+    </section>
+
+    <section class="salt-content">
+      <div class="manifesto">
+        <h2>Nossa Identidade</h2>
+        <p>
+          Não fomos chamados para nos misturar, mas para <span class="highlight">transformar</span>. 
+          Assim como o sal realça o sabor e preserva, nós existimos para trazer a essência de Cristo 
+          para a nossa geração. Somos jovens apaixonados, imperfeitos, mas em busca constante 
+          daquele que é Perfeito.
+        </p>
+      </div>
+
+      <div class="grid-salt">
+        <div class="card-salt">
+          <span class="card-number">01</span>
+          <!-- <h3>Connect</h3> -->
+          <p>Nossos encontros semanais em pequenos grupos. O lugar perfeito para fazer amigos de verdade, compartilhar lutas e crescer juntos na fé.</p>
+        </div>
+
+        <div class="card-salt">
+          <span class="card-number">02</span>
+          <!-- <h3>Worship</h3> -->
+          <p>Cultos de jovens cheios de energia e presença de Deus. Música, palavra e um ambiente onde você pode adorar.</p>
+        </div>
+
+        <div class="card-salt">
+          <span class="card-number">03</span>
+          <!-- <h3>Hangouts</h3> -->
+          <p>Porque a vida com Deus é divertida. Momentos para criar memórias inesquecíveis.</p>
+        </div>
+      </div>
+
+      <div class="join-us">
+        <h2>Faça Parte</h2>
+        <p>Não caminhe sozinho. Existe uma família esperando por você.</p>
+        <a href="contato.html" class="btn-salt">Quero Visitar</a>
+      </div>
     </section>
   </main>
 
