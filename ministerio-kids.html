@@ -6,6 +6,147 @@
   <title>Qahal Kids | Qahal</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+  <style>
+    /* Estilos Exclusivos Qahal Kids */
+    :root {
+      --kids-blue: #4facfe;
+      --kids-cyan: #00f2fe;
+      --kids-yellow: #f09819;
+      --kids-orange: #ff512f;
+      --kids-bg: #fffdf7;
+    }
+
+    body {
+      background-color: var(--kids-bg);
+      color: #333;
+    }
+
+    /* Hero Section Colorida */
+    .kids-hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(120deg, var(--kids-blue) 0%, var(--kids-cyan) 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      border-bottom-left-radius: 50% 20px;
+      border-bottom-right-radius: 50% 20px;
+    }
+
+    .kids-hero h1 {
+      font-size: 4rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    }
+
+    .kids-hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Seção de Valores */
+    .kids-values {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .verse-box {
+      background: white;
+      display: inline-block;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      border: 2px dashed var(--kids-yellow);
+      max-width: 800px;
+    }
+
+    .verse-text {
+      font-size: 1.5rem;
+      color: #555;
+      font-style: italic;
+    }
+
+    .verse-ref {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: var(--kids-orange);
+    }
+
+    /* Cards de Turmas e Eventos */
+    .section-title {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      border-bottom: 5px solid #ddd;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .info-card:hover { transform: translateY(-10px); }
+    
+    .info-card.blue { border-bottom-color: var(--kids-blue); }
+    .info-card.yellow { border-bottom-color: var(--kids-yellow); }
+    .info-card.orange { border-bottom-color: var(--kids-orange); }
+
+    .card-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+    .info-card h3 { color: #333; margin-bottom: 10px; font-size: 1.5rem; }
+
+    /* Seção de Eventos */
+    .kids-events {
+      padding: 60px 20px;
+      background-color: #fff;
+      margin-top: 60px;
+    }
+
+    .event-date {
+      display: inline-block;
+      background: var(--kids-blue);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .btn-kids {
+      background-color: var(--kids-orange);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 30px;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(255, 81, 47, 0.3);
+    }
+
+    .btn-kids:hover {
+      background-color: #e04020;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
   <header class="container">
@@ -25,12 +166,72 @@
   <main>
     <section class="content">
       <br><br>
+    <!-- Hero Section -->
+    <section class="kids-hero">
       <h1>Qahal Kids</h1>
       <p>Cuidando e ensinando a próxima geração.</p>
       <br>
       <p><em>Página em construção. Em breve mais informações sobre o ministério infantil.</em></p>
       <br><br>
       <a href="contato.html" class="btn">Quero participar</a>
+      <p>Um lugar divertido e seguro para seus filhos conhecerem o amor de Jesus.</p>
+    </section>
+
+    <!-- Valores / Versículo -->
+    <section class="kids-values">
+      <div class="verse-box">
+        <span class="verse-text">"Ensina a criança no caminho em que deve andar, e, ainda quando for velho, não se desviará dele."</span>
+        <span class="verse-ref">PROVÉRBIOS 22:6</span>
+      </div>
+    </section>
+
+    <!-- Turmas -->
+    <section style="padding-bottom: 60px;">
+      <h2 class="section-title">Nossas Turmas</h2>
+      <div class="cards-grid">
+        <div class="info-card blue">
+          <span class="card-icon">👶</span>
+          <h3>Berçário & Maternal</h3>
+          <p>Um ambiente seguro e acolhedor para os pequeninos, com cuidadores dedicados.</p>
+        </div>
+        <div class="info-card yellow">
+          <span class="card-icon">🎨</span>
+          <h3>Primário</h3>
+          <p>Aprendizado bíblico através de histórias, brincadeiras e atividades manuais.</p>
+        </div>
+        <div class="info-card orange">
+          <span class="card-icon">🚀</span>
+          <h3>Juniores</h3>
+          <p>Preparando pré-adolescentes com fundamentos sólidos da fé.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eventos -->
+    <section class="kids-events">
+      <h2 class="section-title">Eventos Especiais</h2>
+      <div class="cards-grid">
+        <!-- Festa das Crianças -->
+        <div class="info-card yellow">
+          <span class="card-icon">🎈</span>
+          <span class="event-date">OUTUBRO</span>
+          <h3>Festa das Crianças</h3>
+          <p>Um dia inesquecível com muitas brincadeiras, doces, teatro e a alegria de celebrar a vida com Jesus!</p>
+        </div>
+
+        <!-- Apresentação na Ceia -->
+        <div class="info-card blue">
+          <span class="card-icon">🍞</span>
+          <span class="event-date">DOMINGO DE CEIA</span>
+          <h3>Apresentação Especial</h3>
+          <p>Nossas crianças participam do culto da família com louvores e apresentações, aprendendo o valor da comunhão.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;">
+        <h3>Traga seu filho para fazer parte!</h3>
+        <a href="contato.html" class="btn-kids">Planeje sua visita</a>
+      </div>
     </section>
   </main>
 
