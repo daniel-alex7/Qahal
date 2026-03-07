@@ -6,6 +6,144 @@
   <title>Intercessão | Qahal</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+  <style>
+    /* Estilos Personalizados para a Página de Intercessão */
+    body {
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+    }
+
+    .intercessao-hero {
+      /* Fundo escuro com gradiente sutil para dar profundidade */
+      background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+      position: relative;
+      padding: 120px 20px;
+      text-align: center;
+      border-bottom: 3px solid #c0a062; /* Detalhe Dourado */
+      overflow: hidden;
+    }
+    
+    /* Efeito de luz sutil no fundo */
+    .intercessao-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(192, 160, 98, 0.05), transparent 70%);
+      pointer-events: none;
+    }
+
+    .intercessao-hero h1 {
+      font-size: 3.5rem;
+      color: #c0a062; /* Dourado */
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .intercessao-hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #ccc;
+      position: relative;
+      z-index: 1;
+      line-height: 1.8;
+    }
+
+    .verse-highlight {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #141414;
+      border-bottom: 1px solid #333;
+    }
+
+    .verse-highlight blockquote {
+      font-size: 1.6rem;
+      font-style: italic;
+      color: #fff;
+      margin: 0;
+      font-family: 'Georgia', serif;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .verse-highlight cite {
+      display: block;
+      margin-top: 20px;
+      color: #c0a062;
+      font-weight: bold;
+      font-style: normal;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .pillars-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .pillar-card {
+      background: #1a1a1a;
+      padding: 40px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-10px);
+      border-color: #c0a062;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.8rem;
+      color: #c0a062;
+      margin-bottom: 15px;
+    }
+
+    .pillar-card p {
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    .prayer-cta {
+      background: #1a1a1a;
+      padding: 80px 20px;
+      text-align: center;
+      border-top: 1px solid #333;
+      margin-top: 40px;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 40px;
+      background: #c0a062;
+      color: #000;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn-gold:hover {
+      background: #d4b875;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(192, 160, 98, 0.4);
+    }
+  </style>
 </head>
 <body>
   <header class="container">
@@ -23,14 +161,42 @@
   </header>
 
   <main>
-    <section class="content">
-      <br><br>
-      <h1>Intercessão</h1>
-      <p>Sustentando a igreja e as famílias em oração.</p>
-      <br>
-      <p><em>Página em construção. Em breve mais informações sobre os grupos de oração.</em></p>
-      <br><br>
-      <a href="contato.html" class="btn">Enviar pedido de oração</a>
+    <!-- Hero Section -->
+    <section class="intercessao-hero">
+      <h1>Ministério de Intercessão</h1>
+      <p>"Busquei entre eles um homem que tapasse o muro e se colocasse na brecha perante mim a favor desta terra."</p>
+      <p style="font-size: 0.9rem; margin-top: 10px; color: #c0a062;">EZEQUIEL 22:30</p>
+    </section>
+
+    <!-- Versículo Destaque -->
+    <section class="verse-highlight">
+      <blockquote>"A oração feita por um justo pode muito em seus efeitos."</blockquote>
+      <cite>Tiago 5:16</cite>
+    </section>
+
+    <!-- Pilares do Ministério -->
+    <section class="pillars-section">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <h3>Vigilância</h3>
+          <p>Estamos atentos ao que acontece no mundo espiritual e natural, cobrindo nossa igreja, liderança e famílias em oração constante, dia e noite.</p>
+        </div>
+        <div class="pillar-card">
+          <h3>Oração</h3>
+          <p>Entendemos nossa autoridade em Cristo para quebrar fortalezas. Não lutamos contra carne e sangue, mas batalhamos em oração para estabelecer o Reino de Deus.</p>
+        </div>
+        <div class="pillar-card">
+          <h3>Súplica</h3>
+          <p>Levamos as cargas uns dos outros. Intercedemos pelas necessidades específicas da comunidade, pelos enfermos e por aqueles que ainda não conhecem a Jesus.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chamada para Oração -->
+    <section class="prayer-cta">
+      <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Precisa de Oração?</h2>
+      <p style="max-width: 600px; margin: 0 auto; color: #ccc;">Não importa qual seja a situação, cremos em um Deus que ouve e responde. Deixe seu pedido e nossa equipe estará orando por você.</p>
+      <a href="contato.html" class="btn-gold">Enviar Pedido de Oração</a>
     </section>
   </main>
 
