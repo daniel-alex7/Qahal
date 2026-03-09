@@ -68,6 +68,51 @@
       margin-top: 60px;
       color: #000; /* Cor da fonte alterada para preto */
     }
+
+    /* Estilos para o Carrossel */
+    .carousel-section {
+      padding: 40px 0;
+      background-color: #0a0a0a;
+    }
+    .carousel-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+    .carousel-slide img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(44, 62, 80, 0.5);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: background-color 0.3s;
+    }
+    .carousel-button:hover {
+      background-color: rgba(44, 62, 80, 0.8);
+    }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
   </style>
 </head>
 <body>
@@ -91,16 +136,21 @@
       <p>Servindo nossa comunidade com o amor de Cristo, através de ações práticas que transformam vidas.</p>
     </section>
 
+   
+
     <section class="social-content">
       <h2 style="text-align: center;">Nossos Projetos</h2>
 
       <div class="projects-grid">
         <div class="project-card">
           <!-- IMAGEM DO PROJETO: Substitua o 'src' pelo caminho da sua imagem -->
-          <img class="project-image" src="https://via.placeholder.com/400x200?text=Arrecadação" alt="Campanhas de Arrecadação">
+          
           <div class="project-card-content">
+
+            <!-- Exemplo de campanhas -->
             <h3>Campanhas de Arrecadação</h3>
-            <p>Regularmente, mobilizamos a igreja para arrecadar itens essenciais para quem mais precisa. Nossas principais campanhas são:</p>
+            
+            <p>Regularmente, mobilizamos a igreja para arrecadar itens essenciais para quem mais precisa. Nossas principais campanhas são:</p> <br>
             <ul>
               <li><strong>Campanha do Agasalho:</strong> Coleta de roupas de frio, cobertores e calçados para aquecer o inverno de muitas famílias e pessoas em situação de rua.</li>
               <li><strong>Arrecadação de Alimentos:</strong> Coleta de alimentos não perecíveis para a montagem de cestas básicas que são distribuídas para famílias carentes.</li>
@@ -110,12 +160,12 @@
 
         <div class="project-card">
           <!-- IMAGEM DO PROJETO: Substitua o 'src' pelo caminho da sua imagem -->
-          <img class="project-image" src="https://via.placeholder.com/400x200?text=Comunidade+Lapena" alt="Apoio à Comunidade da Lapena">
+          
           <div class="project-card-content">
             <h3>Apoio à Comunidade da Lapena</h3>
-            <p>Temos um carinho especial pela comunidade da Lapena, localizada perto de nossa igreja. Desenvolvemos um trabalho contínuo de apoio, que inclui:</p>
+            <p>Temos um carinho especial pela comunidade da Lapena, localizada perto de nossa igreja. Desenvolvemos um trabalho contínuo de apoio, que inclui:</p> <br>
             <ul>
-              <li><strong>Ações durante o ano:</strong> Visitas, distribuição de doações e, o mais importante, oferecendo apoio espiritual e amizade.</li>
+              <li><strong>Ações durante o ano:</strong> Visitas, distribuição de doações e, o mais importante, oferecendo apoio espiritual.</li>
               <li><strong>Dia das Crianças:</strong> Realizamos uma grande festa com brincadeiras, lanches e distribuição de presentes para celebrar a vida das crianças da comunidade.</li>
             </ul>
           </div>
@@ -123,13 +173,32 @@
 
         <div class="project-card">
           <!-- IMAGEM DO PROJETO: Substitua o 'src' pelo caminho da sua imagem -->
-          <img class="project-image" src="https://via.placeholder.com/400x200?text=Apoio+Social" alt="Apoio a Moradores de Rua">
+          
           <div class="project-card-content">
             <h3>Apoio a Moradores de Rua</h3>
-            <p>Buscamos levar esperança e dignidade para a população em situação de rua. Nossas ações incluem a entrega de kits de higiene, alimentação e, acima de tudo, uma palavra de fé e acolhimento.</p>
+            <p>Buscamos levar esperança e dignidade para a população em situação de rua. Nossas ações incluem a entrega de kits de higiene, alimentação e, acima de tudo, uma palavra de fé e acolhimento.</p> <br>
           </div>
         </div>
       </div>
+
+       <!-- Seção do Carrossel de Imagens -->
+    <section class="carousel-section">
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img src="https://placehold.co/900x500/4ca1af/FFFFFF?text=Apoio+Comunitário" alt="Ação Social - Apoio Comunitário">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://placehold.co/900x500/e67e22/FFFFFF?text=Campanha+do+Agasalho" alt="Ação Social - Campanha do Agasalho">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://placehold.co/900x500/2c3e50/FFFFFF?text=Entrega+de+Alimentos" alt="Ação Social - Entrega de Alimentos">
+          </div>
+        </div>
+        <button class="carousel-button prev-btn">❮</button>
+        <button class="carousel-button next-btn">❯</button>
+      </div>
+    </section>
 
       <div class="cta-section">
         <h2>Como Ajudar?</h2>
@@ -140,11 +209,52 @@
     </section>
   </main>
 
+  
+
   <footer class="contato">
     <h2>Contato</h2>
     <p>Para mais informações, entre em contato conosco pelo e-mail: qahaladm@gmail.com</p>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.querySelector('.carousel-track');
+      if (track) {
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next-btn');
+        const prevButton = document.querySelector('.prev-btn');
+        
+        let currentIndex = 0;
+        let slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
+
+        const updateCarousel = () => {
+          if(track) track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+        };
+
+        nextButton.addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % slides.length;
+          updateCarousel();
+        });
+
+        prevButton.addEventListener('click', () => {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          updateCarousel();
+        });
+
+        window.addEventListener('resize', () => {
+          slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
+          track.style.transition = 'none';
+          updateCarousel();
+          setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease-in-out';
+          }, 50);
+        });
+
+        // Autoplay
+        setInterval(() => nextButton.click(), 5000);
+      }
+    });
+  </script>
 </body>
 </html>
