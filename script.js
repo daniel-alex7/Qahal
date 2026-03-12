@@ -56,3 +56,41 @@ const mobileNavbar = new MobileNavbar(
 );
 
 mobileNavbar.init();
+
+// =================================
+// LÓGICA DO CARROSSEL
+// =================================
+function initializeCarousel(carouselSelector) {
+  const carousel = document.querySelector(carouselSelector);
+  if (!carousel) return;
+
+  const slide = carousel.querySelector('.carousel-slide');
+  const items = carousel.querySelectorAll('.carousel-slide img');
+  const prevButton = carousel.querySelector('.carousel-button.prev');
+  const nextButton = carousel.querySelector('.carousel-button.next');
+
+  if (!slide || !prevButton || !nextButton || items.length === 0) return;
+
+  let currentIndex = 0;
+  const totalItems = items.length;
+
+  function updateSlidePosition() {
+    const offset = -currentIndex * 100;
+    slide.style.transform = `translateX(${offset}%)`;
+  }
+
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateSlidePosition();
+  });
+
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateSlidePosition();
+  });
+}
+
+// Inicializa o carrossel quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', () => {
+  initializeCarousel('.carousel-compact');
+});

@@ -318,16 +318,150 @@ body{
   font-size: 1.1em;
 }
 
-.sobre {
-  background-color: #f9f9f9;
-  color: #000203;
-  margin-top: 5%;
-  text-align: center;
-  padding: 10px; 
-  width: 100%;
-  height: auto;
+/* =================================
+   SEÇÃO SOBRE / QUEM SOMOS (REDESIGN)
+   ================================= */
+
+.sobre-container {
+  background: linear-gradient(to bottom, #1c1c1c, #111); /* Gradiente sutil */
+  color: #e0e0e0;
+  padding: 80px 5%; /* Use percentual para mais fluidez */
+  border-top: 1px solid #333;
 }
 
+.sobre-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 80px auto; /* Espaço abaixo antes dos pilares */
+}
+
+.sobre-texto .sobre-titulo {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.sobre-texto .sobre-subtitulo {
+  font-size: 1.2rem;
+  color: #1e90ff;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.sobre-texto h3 {
+  font-size: 1.7rem;
+  color:#1e90ff; /* Dourado para subtítulos */
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #333;
+}
+
+.sobre-texto p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.sobre-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Carrossel */
+.carousel-compact {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4 / 3; /* Proporção 4:3 para o carrossel */
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  border: 1px solid #444;
+}
+
+.carousel-slide {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  z-index: 2;
+}
+
+.carousel-button:hover { background: #1e90ff; }
+.carousel-button.prev { left: 10px; }
+.carousel-button.next { right: 10px; }
+
+/* Pilares */
+.pilares-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pilar-card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pilar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(30, 144, 255, 0.1);
+  border-color: #1e90ff;
+}
+
+.pilar-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.pilar-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.pilar-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.sobre { display: none; } /* Esconde a classe antiga se ainda existir */
 .contato{
     color: #f9f9f9;
     text-align: center;
@@ -505,6 +639,22 @@ body{
 
 .louvor h2 { font-size: clamp(1.6rem, 6vw, 3rem); padding: 0 10px; }
 
+@media (max-width: 992px) {
+  .nav-list li {
+    margin: 0 5px;
+    font-size: 15px;
+  }
+  .sobre-content {
+    grid-template-columns: 1fr; /* Coluna única em telas menores */
+    gap: 40px;
+  }
+  .sobre-texto {
+    text-align: center;
+  }
+  .sobre-texto h3 {
+    border-bottom: none; /* Remove a borda no mobile para um look mais limpo */
+  }
+}
 @media (max-width: 768px) {
   .hero-content h1 { font-size: clamp(1.4rem, 6vw, 2.2rem); }
   .contact-form-wrapper, .contact-info { padding: 20px; }
