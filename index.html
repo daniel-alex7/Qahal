@@ -5,9 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="imagens/favicon.ico" type="image/x-icon"> 
-  
-
-
+  <style>
+    /* Estilos para a Seção de Discipulado */
+    #discipulado {
+      padding: 100px 20px;
+      background-color: #0a0a0a;
+      color: white;
+      text-align: center;
+    }
+    .discipulado h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #d4af37;
+    }
+    .temas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 50px auto;
+    }
+    .tema-card {
+      background: #161616;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #333;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .tema-card:hover {
+      border-color: #d4af37;
+      background: #1f1f1f;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1);
+    }
+    .tema-number {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #d4af37;
+      margin-right: 20px;
+      opacity: 0.6;
+    }
+    .tema-title {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  </style>
 
 <title>Qahal | Sobre uma familia</title>
 
@@ -148,9 +195,23 @@
 
   <!-- Discipulado -->
   <section class="discipulado" id="discipulado">
-    <h2>Discipulado</h2>
-    <p>O discipulado serve para criar novos discupulos, caso queira fazer parte do que acreditamos, se junte ao nosso grupo.</p>
-    <a href="#contato" class="btn">Futuro grupo</a>
+    <h2>Jornada de Discipulado</h2>
+    <p>Fundamentos essenciais para uma vida enraizada em Cristo.</p>
+    
+    <div class="temas-grid">
+      <div class="tema-card"><span class="tema-number">01</span><span class="tema-title">//</span></div>
+      <div class="tema-card"><span class="tema-number">02</span><span class="tema-title">//</span></div>
+      <div class="tema-card"><span class="tema-number">03</span><span class="tema-title">//</span></div>
+      <div class="tema-card"><span class="tema-number">04</span><span class="tema-title">//</span></div>
+      <div class="tema-card"><span class="tema-number">05</span><span class="tema-title">//</span></div>
+      <div class="tema-card"><span class="tema-number">06</span><span class="tema-title">//</span></div>
+      <div class="tema-card"><span class="tema-number">07</span><span class="tema-title">//</span></div>
+      <div class="tema-card"><span class="tema-number">08</span><span class="tema-title">//</span></div>
+      <div class="tema-card"><span class="tema-number">09</span><span class="tema-title">//</span></div>
+      <div class="tema-card"><span class="tema-number">10</span><span class="tema-title">//</span></div>
+    </div>
+    
+    <a href="contato.html" class="btn">Quero iniciar minha jornada</a>
   </section>
 
   <!-- Sobre / Nossa História / Identidade -->
