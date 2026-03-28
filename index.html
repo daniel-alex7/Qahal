@@ -16,7 +16,7 @@
     .discipulado h2 {
       font-size: 2.5rem;
       margin-bottom: 10px;
-      color: #d4af37;
+      color:  #1e90ff;
     }
     .temas-grid {
       display: grid;
@@ -36,7 +36,7 @@
       transition: all 0.3s ease;
     }
     .tema-card:hover {
-      border-color: #d4af37;
+      border-color: #1e90ff;
       background: #1f1f1f;
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1);
@@ -44,7 +44,7 @@
     .tema-number {
       font-size: 1.8rem;
       font-weight: 900;
-      color: #d4af37;
+      color:  #1e90ff;
       margin-right: 20px;
       opacity: 0.6;
     }
@@ -54,6 +54,57 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+
+    /* Estilos para a Seção de Eventos */
+    #eventos {
+      padding: 100px 20px;
+      background-color: #0d0d0d;
+      text-align: center;
+    }
+    #eventos h2 {
+      font-size: 2.5rem;
+      color:  #1e90ff;
+      margin-bottom: 10px;
+    }
+    .eventos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 50px auto;
+    }
+    .evento-card {
+      height: 250px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      text-decoration: none;
+    }
+    .evento-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      border-color:  #1e90ff;
+    }
+    .evento-card-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent 100%);
+      z-index: 1;
+    }
+    .evento-card-content {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+    }
+    .bg-conferenca { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+    .bg-teatro { background: linear-gradient(135deg, #232526, #414345); }
+    .bg-festa { background: linear-gradient(135deg, #6a11cb, #2575fc); }
   </style>
 
 <title>Qahal | Sobre uma familia</title>
@@ -186,11 +237,29 @@
   <section class="eventos" id="eventos">
     <h2>Próximos Eventos</h2>
     <p>Não perca o que Deus está fazendo em nosso meio.</p>
-    <ul>
-      <li>Conferência </li>
-      <li>Teatro De Pascoa - Em breve </li>
-      <li>Festa das Crianças</li>
-    </ul>
+    <div class="eventos-grid">
+      <div class="evento-card bg-conferenca">
+        <div class="evento-card-overlay"></div>
+        <div class="evento-card-content">
+          <h3>Conferência</h3>
+          <p>Um tempo de renovo e expansão para toda a família.</p>
+        </div>
+      </div>
+      <div class="evento-card bg-teatro">
+        <div class="evento-card-overlay"></div>
+        <div class="evento-card-content">
+          <h3>Teatro De Páscoa</h3>
+          <p>Em breve - Uma encenação emocionante da nossa redenção.</p>
+        </div>
+      </div>
+      <div class="evento-card bg-festa">
+        <div class="evento-card-overlay"></div>
+        <div class="evento-card-content">
+          <h3>Festa das Crianças</h3>
+          <p>Celebrando a alegria e a pureza da próxima geração.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Discipulado -->
